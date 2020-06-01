@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+.logo {
+  width: 30px;
+}
+
+.keyword-lists li {
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+.tool-lists {
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tool-lists tr {
+  height: 36px;
+}
+
+.tool-lists th {
+  border-bottom: 1px solid #ccc;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}

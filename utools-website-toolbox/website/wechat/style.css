@@ -1,0 +1,32 @@
+/* 登录页 */
+div.login.ng-scope {
+  min-height: 0;
+  min-width: 0;
+}
+
+div.login_box {
+  height: 450px;
+  top: calc(50% + 20px);
+}
+
+div.lang,
+div.login .copyright {
+  bottom: 30px;
+}
+/* 登录页 */
+
+/* 主页面 */
+div.main {
+  height: 100%;
+  padding-top: 0;
+}
+
+div.main .main_inner {
+  max-width: none;
+  border-radius: unset;
+}
+
+div.main p.copyright {
+  display: none;
+}
+/* 主页面 */

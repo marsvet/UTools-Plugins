@@ -1,0 +1,16 @@
+body {
+  padding: 20px;
+}
+
+body > div.jumbotron {
+  display: none;
+}
+
+#ddd {
+  display: none;
+}
+
+body > div:nth-child(2) {
+  text-align: center;
+  padding: 20px 0;
+}

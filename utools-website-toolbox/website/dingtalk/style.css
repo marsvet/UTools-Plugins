@@ -1,0 +1,195 @@
+/**
+ * 拷贝自 https://github.com/vfasky/utools-dingtalk
+ */
+
+body .login-form .tab-items {
+  display: none;
+}
+
+body #layout-main {
+  width: 100%;
+  height: 100%;
+  flex: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+body #layout-main #body {
+  height: 100%;
+}
+
+body .search-bar-wraper {
+  position: fixed;
+  top: -10px;
+  right: 44px;
+}
+
+body #header,
+body #header.lng-zh {
+  background: #e7eaed;
+  flex: 0 0 40px;
+  border: none;
+  border-radius: 0;
+}
+
+body #content-pannel {
+  background: #fff;
+}
+
+/* body #body {
+    position: relative;
+    z-index: 1;
+} */
+
+body .upload-container-wrap {
+  position: fixed;
+  top: -11px;
+  right: 6px;
+  z-index: 1;
+}
+
+body .upload-container-wrap .upload-task-container {
+  color: #707275;
+}
+
+body .search-bar-wraper .main-search-2 .select2-search-field input {
+  background: #fff;
+  color: #e6e5e6;
+}
+
+body #content-pannel .content-pannel-head {
+  background: #fff;
+}
+
+body #menu-pannel {
+  position: fixed;
+  height: 40px;
+  left: 6px;
+  top: 0px;
+  width: 600px;
+  flex-direction: row;
+  background: transparent;
+  border: none;
+  z-index: 2;
+}
+
+/* body #menu-pannel-body {
+    position: relative;
+    z-index: 1;
+} */
+
+body #menu-pannel .main-menus {
+  padding-left: 6px;
+  flex-direction: row;
+}
+
+body #menu-pannel .main-menus .menu-item {
+  width: 60px;
+}
+
+body #menu-pannel .main-menus .menu-item.menu-ding .menu-icon {
+  font-size: 24px;
+}
+
+body #menu-pannel .main-menus .menu-item.menu-company-call-center,
+body #menu-pannel .extra-options .extra-options-inner .extra-item.admin,
+org-email {
+  display: none;
+}
+
+body #content-pannel .content-pannel-body,
+body #sub-menu-pannel.conv-list-pannel .conv-lists-box,
+body .conv-detail-pannel .send-msg-box-wrapper,
+body .conv-detail-pannel .send-msg-box-wrapper .input-area {
+  background: #f7f7f7;
+}
+
+body #menu-pannel .profile {
+  width: 30px;
+  flex: 0;
+}
+
+body #menu-pannel .profile .user-avatar.big-52 {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+body #menu-pannel .profile .user-avatar.big-52:hover {
+  border-color: #008cee;
+}
+
+/* body #sub-menu-pannel.conv-list-pannel .conv-lists-box {
+    padding-bottom: 20px;
+} */
+
+body #menu-pannel .extra-options {
+  border-left: 1px solid #e1e0e4;
+  padding-left: 20px;
+}
+
+body #menu-pannel .extra-options,
+body #menu-pannel extra-options-inner {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: auto;
+}
+
+body #menu-pannel .extra-options .extra-options-inner .extra-item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 45px;
+}
+
+body #menu-pannel .extra-options .extra-options-inner .extra-item .tip-menu {
+  bottom: auto;
+}
+
+body
+  #menu-pannel
+  .extra-options
+  .extra-options-inner
+  .extra-item
+  .tip-menu
+  .tri {
+  display: none;
+}
+
+body .settings .setting-item .toggle label:before {
+  color: #707275;
+}
+
+body #menu-pannel .extra-options .extra-options-inner .extra-item .iconfont {
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+body #sub-menu-pannel {
+  background: #f7f7f7;
+}
+
+/* body .conv-detail-pannel .content-pannel-body .chat-item.not-me .msg-bubble-area .msg-bubble.markdown-msg {
+    width: 100%;
+    max-width: 100%;
+} */
+
+body .conv-detail-pannel .send-msg-box-wrapper,
+body
+  .conv-detail-pannel
+  .send-msg-box-wrapper
+  .action-area
+  .send-message-button {
+  border-radius: 0;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

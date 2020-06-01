@@ -1,0 +1,82 @@
+[
+  {
+    "code": "gaoding-ps",
+    "explain": "在线 Photoshop",
+    "cmds": ["稿定PS", "ps", "photoshop"],
+    "url": "https://ps.gaoding.com/",
+    "title": "photoshop",
+    "logo": "gaoding-ps.png"
+  },
+  {
+    "code": "XAudioPro",
+    "explain": "在线音频实时剪辑转码",
+    "cmds": ["XAudioPro"],
+    "url": "https://www.xaudiopro.com/edit",
+    "title": "XAudioPro",
+    "logo": "XAudioPro.png"
+  },
+  {
+    "code": "VideoCutter",
+    "explain": "视频在线剪辑",
+    "cmds": ["VideoCutter", "视频剪辑"],
+    "url": "https://online-video-cutter.com/cn/",
+    "title": "视频在线剪辑",
+    "logo": "VideoCutter.png"
+  },
+  {
+    "code": "arya",
+    "explain": "在线 markdown 编辑器",
+    "cmds": ["arya", "markdown编辑器"],
+    "url": "https://markdown.lovejade.cn/",
+    "title": "markdown 编辑器",
+    "logo": "arya.png"
+  },
+  {
+    "code": "postwoman",
+    "explain": "接口测试工具",
+    "cmds": ["postwoman"],
+    "url": "https://postwoman.io/cn/",
+    "title": "postwoman",
+    "logo": "postwoman.png"
+  },
+  {
+    "code": "dingtalk",
+    "explain": "钉钉网页版",
+    "cmds": ["钉钉", "dingtalk"],
+    "url": "https://im.dingtalk.com/",
+    "title": "钉钉网页版",
+    "logo": "dingtalk.png",
+    "windowWidth": 1000,
+    "windowHeight": 600
+  },
+  {
+    "code": "wechat",
+    "explain": "微信网页版",
+    "cmds": ["WechatOnline", "微信网页版"],
+    "url": "https://wx2.qq.com/",
+    "title": "微信网页版",
+    "logo": "wechat.png",
+    "windowWidth": 1000,
+    "windowHeight": 600
+  },
+  {
+    "code": "DeepL",
+    "explain": "DeepL 翻译器",
+    "cmds": ["DeepL"],
+    "url": "https://www.deepl.com/translator",
+    "title": "DeepL 翻译器",
+    "logo": "DeepL.svg",
+    "windowWidth": 1000,
+    "windowHeight": 600
+  },
+  {
+    "code": "SubdomainBlasting",
+    "explain": "在线子域名爆破",
+    "cmds": ["SubdomainBlasting", "子域名爆破"],
+    "url": "http://z.zcjun.com/",
+    "title": "在线子域名爆破",
+    "logo": "SubdomainBlasting.png",
+    "windowWidth": 1000,
+    "windowHeight": 600
+  }
+]

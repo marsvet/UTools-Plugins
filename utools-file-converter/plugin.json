@@ -1,0 +1,25 @@
+{
+  "pluginName": "文件格式转换",
+  "description": "200+ 文件格式相互转换",
+  "author": "marsvet",
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "platform": ["win32", "darwin", "linux"],
+  "version": "0.1.1",
+  "features": [
+    {
+      "code": "file-converter",
+      "explain": "200+ 文件格式相互转换",
+      "cmds": [
+        "文件格式转换",
+        "FileConverter",
+        {
+          "type": "files",
+          "fileType": "file",
+          "label": "文件格式转换"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "pluginName": "网站工具箱",
+  "description": "将工具网站包装后用 utools 打开，以获得与本地软件相似的使用体验。",
+  "author": "marsvet",
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "platform": ["win32", "darwin", "linux"],
+  "version": "1.0.1",
+  "pluginSetting": {
+    "height": 1
+  },
+  "features": [
+    {
+      "code": "网站工具箱设置",
+      "explain": "打开网站工具箱设置页面",
+      "cmds": ["网站工具箱设置"]
+    }
+  ]
+}

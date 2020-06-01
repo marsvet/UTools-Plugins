@@ -1,0 +1,17 @@
+{
+  "pluginName": ".gitignore 文件生成器",
+  "description": "快速生成 .gitignore 文件",
+  "author": "marsvet",
+  "homepage": "https://github.com/marsvet/utools-gitignore-generator",
+  "preload": "preload.js",
+  "logo": "logo.png",
+  "platform": ["win32", "darwin", "linux"],
+  "version": "1.0.1",
+  "features": [
+    {
+      "code": "gitignore_generator",
+      "explain": "快速生成 .gitignore 文件",
+      "cmds": ["gitignore生成器"]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+.table tbody tr:hover {
+  background-color: #faf5f5;
+}
+
+.table th {
+  background-color: #faf5f5;
+  font-weight: normal;
+  vertical-align: middle !important;
+  height: 55px;
+}
+
+.table td {
+  vertical-align: middle !important;
+  height: 60px;
+}
+
+.table .output-type .dropdown-menu {
+  overflow: auto;
+  height: 60%;
+}
+
+.table .filename {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.table .upload-date {
+  width: 175px;
+}
+
+.table .converter-status {
+  width: 150px;
+}
+
+.table .output-type {
+  width: 125px;
+}
+
+.table .operations {
+  width: 115px;
+}

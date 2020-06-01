@@ -1,0 +1,37 @@
+#dl_translator {
+  padding: 0 10px 0 20px;
+}
+
+#dl_translator
+  > div.lmt__sides_container
+  > div.lmt__stickyMenubar_whiteBackground.lmt__stickyMenubar_whiteBackground--hide {
+  top: 0;
+}
+
+#dl_translator
+  > div.lmt__sides_container
+  > div.lmt__side_container.lmt__side_container--source
+  > div.lmt__language_container {
+  top: 0 !important;
+}
+
+#dl_translator
+  > div.lmt__sides_container
+  > div.lmt__side_container.lmt__side_container--target
+  > div.lmt__language_container {
+  top: 0 !important;
+}
+
+#dl_translator
+  > div.lmt__sides_container
+  > div.lmt__side_container.lmt__side_container--source
+  > div.lmt__textarea_container {
+  top: 4px;
+}
+
+#dl_translator
+  > div.lmt__sides_container
+  > div.lmt__side_container.lmt__side_container--target
+  > div.lmt__textarea_container {
+  top: 4px;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "utools-file-converter",
+  "version": "0.1.1",
+  "description": "200+ 文件格式相互转换",
+  "author": "marsvet",
+  "dependencies": {
+    "chinese-random-ip": "^0.0.5",
+    "superagent": "^5.2.2"
+  }
+}

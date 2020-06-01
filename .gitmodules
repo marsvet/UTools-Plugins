@@ -1,0 +1,3 @@
+[submodule "utools-gitignore-generator/gitignore"]
+	path = utools-gitignore-generator/gitignore
+	url = https://github.com/github/gitignore.git

@@ -1,0 +1,11 @@
+div.header {
+  display: none;
+}
+
+div.site_footer {
+  display: none;
+}
+
+div.sub_header_2 > ins {
+  display: none;
+}

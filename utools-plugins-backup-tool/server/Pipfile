@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.douban.com/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+
+[packages]
+flask = "*"
+flask-apscheduler = "*"
+requests = "*"
+asarpy = "*"
+
+[requires]
+python_version = "3.6"

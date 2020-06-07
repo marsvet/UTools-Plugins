@@ -20,3 +20,11 @@
 - DeepL 翻译器
 - 在线子域名爆破
 
+## TODO
+
+- [ ] 更换图标
+- [ ] 介绍中添加github地址，plugin.json 中也添加
+- [ ] 用户自己添加工具
+- [ ] UI 优化
+- [ ] 钉钉尽可能优化
+- [ ] 添加工具：写作猫、processon、关系数据库设计工具、office365 online、figma

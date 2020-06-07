@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>插件备份工具</title>
+    <link rel="stylesheet" href="res/mdui.min.css" />
+    <style>
+      #nav-tab {
+        position: fixed;
+        z-index: 1000;
+        background-color: white;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav-tab" class="mdui-tab mdui-tab-centered" mdui-tab>
+      <a href="#backup" class="mdui-ripple">备份</a>
+      <a href="#restore" class="mdui-ripple">恢复</a>
+      <!-- <a href="#settings" class="mdui-ripple">设置</a> -->
+    </div>
+    <div class="mdui-p-t-5">
+      <div id="backup" class="mdui-p-a-2">
+        <div class="mdui-container">
+          <div class="mdui-row">
+            <div class="mdui-col-xs-10">
+              <div
+                id="backup-spinner"
+                class="mdui-spinner mdui-spinner-colorful mdui-invisible"
+              ></div>
+              <div class="mdui-progress">
+                <div
+                  id="backup-progress"
+                  class="mdui-progress-determinate"
+                ></div>
+              </div>
+            </div>
+            <div class="mdui-col-xs-2">
+              <button
+                id="backup-button"
+                class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+              >
+                开始备份
+              </button>
+            </div>
+          </div>
+          <div class="mdui-table-fluid mdui-m-t-3" id="local-plugins-list">
+            <table class="mdui-table mdui-table-hoverable">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>插件名称</th>
+                  <th>版本</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="restore" class="mdui-p-a-2">
+        <div class="mdui-container">
+          <div class="mdui-row">
+            <div class="mdui-col-xs-10">
+              <div
+                id="restore-spinner"
+                class="mdui-spinner mdui-spinner-colorful mdui-invisible"
+              ></div>
+              <div class="mdui-progress">
+                <div
+                  id="restore-progress"
+                  class="mdui-progress-determinate"
+                ></div>
+              </div>
+            </div>
+            <div class="mdui-col-xs-2">
+              <button
+                id="restore-button"
+                class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+              >
+                开始恢复
+              </button>
+            </div>
+          </div>
+          <div class="mdui-table-fluid mdui-m-t-3" id="db-plugins-list">
+            <table class="mdui-table mdui-table-hoverable">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>插件名称</th>
+                  <th>版本</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="settings" class="mdui-p-a-2"></div> -->
+    </div>
+    <script src="res/mdui.min.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>

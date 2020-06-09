@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狗屁不通文章生成器</title>
+    <style>
+      body {
+        padding: 0 15px;
+        font-size: 1.3em;
+      }
+    </style>
+    <script>
+      let input = "";
+
+      utools.onPluginReady(() => {
+        utools.setExpendHeight(0);
+      });
+
+      utools.onPluginEnter(() => {
+        utools.setSubInput(({ text }) => {
+          input = text.trim();
+        }, "输入主题和字数，用 ; 隔开。按回车键生成文章并复制到剪贴板");
+      });
+
+      document.onkeydown = (event) => {
+        if (event.keyCode == 13) {
+          let wordCount;
+          try {
+            wordCount = input.match(/(;|；) *?\d+$/)[0];
+            if (!isNaN(Number(wordCount))) new Error();
+          } catch (e) {
+            return;
+          }
+          let topic = input.slice(0, input.lastIndexOf(wordCount)).trim();
+          wordCount = wordCount.slice(1).trim();
+          let article = window.生成文章(topic, wordCount);
+
+          let html = "";
+          let sourceText = "";
+          for (let paragraph of article) {
+            html += `<p>${paragraph}</p>`;
+            sourceText += paragraph + "\n";
+          }
+          document.body.innerHTML = html;
+          utools.copyText(sourceText);
+
+          utools.setExpendHeight(543);
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "pluginName": "狗屁不通文章生成器",
+  "description": "生成狗屁不通文章，可以用来搞笑和测试",
+  "author": "marsvet",
+  "main": "index.html",
+  "preload": "preload.js",
+  "logo": "logo.jpg",
+  "platform": ["win32", "darwin", "linux"],
+  "version": "1.0.0",
+  "pluginSetting": {
+    "height": 1
+  },
+  "features": [
+    {
+      "code": "bullshit-generator",
+      "explain": "狗屁不通文章生成器",
+      "cmds": ["狗屁不通文章生成器"]
+    }
+  ]
+}

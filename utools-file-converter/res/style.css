@@ -1,0 +1,40 @@
+#file-table td {
+  height: 62px;
+}
+
+#file-table th,
+#file-table td {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#file-table th:first-child,
+#file-table td:first-child {
+  padding-left: 20px;
+}
+
+#file-table th:last-child,
+#file-table td:last-child {
+  padding-right: 20px;
+}
+
+#file-table .filename {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#file-table .upload-date {
+  width: 164px;
+}
+
+#file-table .converter-status {
+  width: 138px;
+}
+
+#file-table .output-type {
+  width: 96px;
+}
+
+#file-table .operations {
+  width: 121px;
+}

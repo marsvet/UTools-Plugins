@@ -3,6 +3,7 @@ const path = require("path");
 const querystring = require("querystring");
 const superagent = require("superagent");
 const randomIp = require("chinese-random-ip");
+const progressStream = require("progress-stream");
 
 /**
  * 封装一个 sleep 函数
@@ -13,8 +14,38 @@ function sleep(ms) {
   });
 }
 
+/**
+ * 封装 path.basename()
+ */
 window.getPathBasename = (p) => {
   return path.basename(p);
+};
+
+/**
+ * 生成随机 id
+ */
+window.randomId = () => {
+  let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let chars = letters + "0123456789-_";
+  let minLength = 8;
+  let maxLength = 32;
+  let resultLength = Math.floor(
+    Math.random() * (maxLength - minLength + 1) + minLength
+  );
+
+  let result = letters[Math.floor(Math.random() * letters.length)]; // id 的开头字符必须是字母
+  for (let i = 0; i < resultLength; i++)
+    result += chars[Math.floor(Math.random() * chars.length)];
+  return result;
+};
+
+/**
+ * 验证文件大小是否小于 10MB
+ */
+window.checkFileSize = (filePath) => {
+  let fileSize = fs.statSync(filePath).size;
+  if (fileSize < 10 * 1024 * 1024) return true;
+  else return false;
 };
 
 /**
@@ -59,7 +90,7 @@ window.Converter = class {
   /**
    * 上传文件
    */
-  async upload(filePath, uploadProgressCallback) {
+  async upload(filePath, progressCallback) {
     this._filePath = filePath;
 
     let rsp = await this._agent
@@ -67,8 +98,12 @@ window.Converter = class {
       .field("action", "upload")
       .attach("files[]", filePath)
       .on("progress", (event) => {
-        let percent = ((event.loaded / event.total) * 100).toFixed(2);
-        uploadProgressCallback(percent);
+        if (progressCallback) {
+          let percent = ((event.loaded / event.total) * 100).toFixed(2);
+          if (String(percent).split(".")[1] == "00")
+            percent = String(percent).split(".")[0];
+          progressCallback(percent);
+        }
       });
     let rspData = JSON.parse(rsp.text);
 
@@ -82,7 +117,7 @@ window.Converter = class {
   /**
    * 转换
    */
-  async convert(outputType, convertProgressCallback) {
+  async convert(outputType, progressCallback) {
     let rsp = await this._agent.post(this._uploadUrl).type("form").send({
       file_name: this._filename,
       token: this._token,
@@ -116,8 +151,11 @@ window.Converter = class {
         process_url: this._processUrl,
       });
       let rspData = JSON.parse(rsp.text);
+
       let percent = rspData["percent"].toFixed(2);
-      convertProgressCallback(percent);
+      if (String(percent).split(".")[1] == "00")
+        percent = String(percent).split(".")[0];
+      if (progressCallback) progressCallback(percent);
 
       if (
         rspData["percent"] == 100 &&
@@ -133,15 +171,22 @@ window.Converter = class {
   /**
    * 下载
    */
-  download(savePath) {
-    return new Promise((resolve, reject) => {
-      let writeStream = fs.createWriteStream(savePath);
-      writeStream.on("finish", () => {
-        writeStream.close();
-        resolve();
-      });
+  download(savePath, progressCallback) {
+    let writeStream = fs.createWriteStream(savePath);
+    let progress = progressStream({ length: "0" });
 
-      this._agent.get(this._downloadUrl).pipe(writeStream);
+    this._agent.get(this._downloadUrl).pipe(progress).pipe(writeStream);
+
+    progress.on("progress", (obj) => {
+      let percent = obj.percentage.toFixed(2);
+      if (String(percent).split(".")[1] == "00")
+        percent = String(percent).split(".")[0];
+      if (progressCallback) progressCallback(percent);
+    });
+
+    return new Promise((resolve, reject) => {
+      writeStream.on("finish", resolve);
+      writeStream.on("error", reject);
     });
   }
 };

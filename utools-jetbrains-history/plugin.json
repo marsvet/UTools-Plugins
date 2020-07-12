@@ -1,0 +1,31 @@
+{
+  "pluginName": "JetBrains",
+  "description": "快速打开 JetBrains 系列软件历史项目",
+  "author": "marsvet",
+  "homepage": "https://github.com/marsvet/uTools-plugins/tree/master/utools-jetbrains-history",
+  "preload": "src/preload.js",
+  "logo": "logo.png",
+  "platform": ["win32", "darwin", "linux"],
+  "version": "0.1.0",
+  "features": [
+    {
+      "code": "JetHistory",
+      "explain": "快速打开 JetBrains 系列软件历史项目",
+      "cmds": ["JetHistory"]
+    },
+    {
+      "code": "JetSettings",
+      "explain": "设置软件启动路径或 recentProjects.xml 文件路径",
+      "cmds": [
+        "JetSettings",
+        {
+          "type": "files",
+          "label": "JetSettings",
+          "fileType": "file",
+          "minLength": 1,
+          "maxLength": 1
+        }
+      ]
+    }
+  ]
+}

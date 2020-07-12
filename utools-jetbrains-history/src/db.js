@@ -81,7 +81,7 @@ module.exports = {
    */
   fixDB() {
     let softwares = cst.softwares;
-    let dbSfNames = getSoftwareSettings().map((item) => item.name);
+    let dbSfNames = this.getSoftwareSettings().map((item) => item.name);
     let newSfs = [];
     softwares.forEach((sf) => {
       if (dbSfNames.indexOf(sf.name) == -1) {

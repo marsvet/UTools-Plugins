@@ -54,3 +54,9 @@
 Github 地址：[https://github.com/marsvet/uTools-plugins/tree/master/utools-jetbrains-history](https://github.com/marsvet/uTools-plugins/tree/master/utools-jetbrains-history)
 
 猿料社区发布页：[https://yuanliao.info/d/2026](https://yuanliao.info/d/2026)
+
+## 更新日志
+
+### 0.1.1
+
+修复 `JetSettings` 有重复项的 bug。

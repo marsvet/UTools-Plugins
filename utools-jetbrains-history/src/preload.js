@@ -126,6 +126,8 @@ let JetSettings = {
   mode: "list",
   args: {
     enter: (action, callbackSetList) => {
+      pathSettingList = [];
+
       if (action.type == "files") {
         setTimeout(() => {
           utools.setSubInputValue(action.payload[0].path);

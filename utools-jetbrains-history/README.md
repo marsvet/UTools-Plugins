@@ -37,9 +37,9 @@
 
    以 IDEA 为例：
 
-   windows：**软件安装目录\\bin** 下的 **idea.exe** 或 **idea64.exe**（如果是 64 位系统，就用 **idea64.exe**，如果是 32 位系统，就用 **idea.exe**
+   windows：**软件安装目录\\bin** 下的 **idea.exe** 或 **idea64.exe**（如果是 64 位系统，就用 **idea64.exe**，如果是 32 位系统，就用 **idea.exe**）
 
-   linux：**软件安装目录\\bin** 下的 **idea.sh**
+   linux：**软件安装目录/bin** 下的 **idea.sh**
 
    mac 不太清楚
 
@@ -56,6 +56,10 @@ Github 地址：[https://github.com/marsvet/uTools-plugins/tree/master/utools-je
 猿料社区发布页：[https://yuanliao.info/d/2026](https://yuanliao.info/d/2026)
 
 ## 更新日志
+
+### 0.1.2
+
+适配更多版本。
 
 ### 0.1.1
 

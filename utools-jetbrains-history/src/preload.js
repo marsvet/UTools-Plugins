@@ -5,7 +5,7 @@ const xml2js = require("xml2js");
 const { exec } = require("child_process");
 const util = require("./util");
 const db = require("./db");
-const parser = require("./parser");
+const parsers = require("./parsers").getParsers();
 
 /**
  * 插件载入完成后调用
@@ -38,20 +38,26 @@ function getHistory() {
     }
 
     let content = fs.readFileSync(sf.recent);
-    try {
-      xml2js.parseString(content, { async: false }, (err, data) => {
-        let history = [];
-        if (sf.name == "Android Studio") history = parser.asParser(data);
-        else history = parser.jetParser(data);
-        history.map((item) => {
-          item.icon = sf.icon;
-          item.index = index;
-        });
-        allHistory.push(...history);
+    xml2js.parseString(content, { async: false }, (err, data) => {
+      let history = [];
+      parsers.forEach((parser, index) => {
+        if (history.length != 0) return;
+        try {
+          history = parser(data);
+          history.map((item) => {
+            item.icon = sf.icon;
+            item.index = index;
+          });
+          allHistory.push(...history);
+        } catch (err) {
+          if (index == parsers.length - 1)
+            utools.showNotification(
+              `${sf.name} 的 recentProjects.xml 文件解析错误`
+            );
+          else return;
+        }
       });
-    } catch (err) {
-      utools.showNotification(`${sf.name} 的 recentProjects.xml 文件解析错误`);
-    }
+    });
   });
 
   allHistory = allHistory

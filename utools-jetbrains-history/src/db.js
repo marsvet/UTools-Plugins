@@ -16,7 +16,7 @@ module.exports = {
   initDB() {
     utools.db.put({
       _id: "pluginVersion",
-      pluginVersion: "0.0.0",
+      pluginVersion: cst.pluginInfo.version,
     });
 
     let softwares = cst.softwares;

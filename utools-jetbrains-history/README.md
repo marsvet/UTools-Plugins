@@ -55,12 +55,11 @@ Github 地址：[https://github.com/marsvet/uTools-plugins/tree/master/utools-je
 
 猿料社区发布页：[https://yuanliao.info/d/2026](https://yuanliao.info/d/2026)
 
-## 更新日志
+## TODO
 
-### 0.1.2
-
-适配更多版本。
-
-### 0.1.1
-
-修复 `JetSettings` 有重复项的 bug。
+1. 修改设置页面
+2. 清理无效项目（清理所有或单独清理）
+3. recentProjects.xml 默认值
+4. 在当前目录中打开 xxx
+5. 设置页中复制路径
+6. 清除设置

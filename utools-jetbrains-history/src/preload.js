@@ -11,11 +11,17 @@ const parsers = require("./parsers").getParsers();
  * 插件载入完成后调用
  */
 utools.onPluginReady(() => {
-  if (!db.dbExisted()) db.initDB();
+  // 第一次安装时
+  if (!db.dbExisted()) {
+    db.initDB();
+    util.displayReadme();
+  }
+
+  // 插件更新时
   if (db.pluginUpdated()) {
     db.updatePluginVersion();
     db.fixDB();
-    util.displayReadme();
+    util.displayChangeLog();
   }
 });
 
@@ -28,7 +34,7 @@ function getHistory() {
   allHistory = [];
 
   db.getSoftwareSettings().forEach((sf, index) => {
-    if (sf.recent == "未设置") return;
+    if (sf.recent == "未设置") return; // 未设置路径的直接跳过
     try {
       let stat = originalFs.statSync(sf.recent);
       if (stat.isDirectory()) throw new Error();
@@ -37,23 +43,23 @@ function getHistory() {
       return;
     }
 
-    let content = fs.readFileSync(sf.recent);
+    let content = fs.readFileSync(sf.recent); // 读取 recentProjects.xml 文件
     xml2js.parseString(content, { async: false }, (err, data) => {
       let history = [];
-      parsers.forEach((parser, index) => {
+      // 循环尝试解析函数
+      parsers.forEach((parser, parserIndex) => {
         if (history.length != 0) return;
         try {
           history = parser(data);
           history.map((item) => {
             item.icon = sf.icon;
-            item.index = index;
+            item.index = index; // 用哪个软件打开
           });
           allHistory.push(...history);
         } catch (err) {
-          if (index == parsers.length - 1)
-            utools.showNotification(
-              `${sf.name} 的 recentProjects.xml 文件解析错误`
-            );
+          // 如果最后一个解析函数也解析失败，提示错误并返回
+          if (parserIndex == parsers.length - 1)
+            utools.showNotification(`${sf.name} 的 recentProjects.xml 文件解析错误`);
           else return;
         }
       });
@@ -79,11 +85,7 @@ let JetHistory = {
 
     search: (action, searchWord, callbackSetList) => {
       if (!searchWord) return callbackSetList();
-      return callbackSetList(
-        allHistory.filter(
-          (x) => x.title.toLowerCase().indexOf(searchWord.toLowerCase()) != -1
-        )
-      );
+      return callbackSetList(allHistory.filter((x) => x.title.toLowerCase().indexOf(searchWord.toLowerCase()) != -1));
     },
 
     select: (action, itemData) => {
@@ -185,13 +187,10 @@ let JetSettings = {
 
       // 如果修改的是第一项，手动修改界面
       if (itemData.index == 0 && itemData.type == "recent") {
-        document.querySelector(
-          ".list-item-description"
-        ).innerHTML = inputedPath;
+        document.querySelector(".list-item-description").innerHTML = inputedPath;
       }
 
-      if (itemData.type === "recent")
-        pathSettingList[itemData.index * 2].description = inputedPath;
+      if (itemData.type === "recent") pathSettingList[itemData.index * 2].description = inputedPath;
       else pathSettingList[itemData.index * 2 + 1].description = inputedPath;
     },
 

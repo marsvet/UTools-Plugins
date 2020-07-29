@@ -2,10 +2,11 @@ let parsers = [];
 
 parsers[0] = (data) => {
   let root = data.application;
-  let component =
-    root.component[
-      root.component.findIndex((item) => item.$.name == "RecentProjectsManager") // 获取 name="RecentProjectsManager" 的 component 元素
-    ];
+  // let component =
+  //   root.component[
+  //     root.component.findIndex((item) => item.$.name == "RecentProjectsManager") // 获取 name="RecentProjectsManager" 的 component 元素
+  //   ];
+  let component = root.component[0];
   let option =
     component.option[
       component.option.findIndex((item) => item.$.name == "additionalInfo") // 获取 name="additionalInfo" 的 option 元素

@@ -84,7 +84,7 @@ let JetHistory = {
     },
 
     search: (action, searchWord, callbackSetList) => {
-      if (!searchWord) return callbackSetList();
+      if (!searchWord) return callbackSetList(allHistory);
       return callbackSetList(allHistory.filter((x) => x.title.toLowerCase().indexOf(searchWord.toLowerCase()) !== -1
           || x.description.toLowerCase().indexOf(searchWord.toLowerCase()) !== -1));
     },
